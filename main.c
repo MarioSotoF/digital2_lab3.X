@@ -24,9 +24,14 @@
 // Use project enums instead of #define for ON and OFF.
 
 #include <xc.h>
+#define _XTAL_FREQ 4000000
+
 #include <stdio.h>
 #include <stdint.h>
 #include <pic16f887.h>
+#include "ADC.h"
+#include "LCD.h"
+
 /*
  * File:   main.c
  * Author: mario
@@ -37,77 +42,22 @@
 
 
 
-//#define RS RD2
-//#define EN RD3
-//#define C0 RC0
-//#define C1 RC1
-//#define C2 RC2
-//#define C3 RC3
-//#define C4 RC4
-//#define C5 RC5
-//#define C6 RC6
-//#define C7 RC7
 
 void main(void) {
-    unsigned int a;
-    setup();
-    //TRISC = 0x00;
-    //TRISD = 0x00;
-    Lcd_Init();
-    while (1) {
-
-        Lcd_Clear();
-        //        if (PORTCbits.RC7 == 0) {
-        Lcd_Set_Cursor(1, 1);
-        Lcd_Write_String("Hola Mundo");
-        //        }
-        //        if (PORTCbits.RC7 == 0) {
-        Lcd_Set_Cursor(2, 1);
-        Lcd_Write_String("Adios Mundo");
-        __delay_ms(2000);
-        Lcd_Clear();
-        //        }
-        //        if (PORTCbits.RC7 == 0) {
-        Lcd_Set_Cursor(1, 1);
-        Lcd_Write_String("Developed By");
-        Lcd_Set_Cursor(2, 1);
-        Lcd_Write_String("electroSome");
-        __delay_ms(2000);
-        Lcd_Clear();
-        //        }
-
-
-        //        Lcd_Set_Cursor(1, 1);
-        //        Lcd_Write_String("www.electroSome.com");
-
-        for (a = 0; a < 15; a++) {
-            __delay_ms(300);
-            Lcd_Shift_Left();
-        }
-
-        for (a = 0; a < 15; a++) {
-            __delay_ms(300);
-            Lcd_Shift_Right();
-        }
-
-        Lcd_Clear();
-        Lcd_Set_Cursor(2, 1);
-        Lcd_Write_Char('M');
-        Lcd_Write_Char('S');
-        __delay_ms(2000);
-    }
+    
+    
+    while (1);
+    return;
+        
+        
+    
+    
 }
+
+
 void setup(void){
     
     
     
-    ANSEL = 0;
-    ANSELH = 0;
-    TRISA = 0;
-    PORTA = 0;
-    TRISC = 0b00000000;
-    TRISD = 0b00000000;
-    PORTC = 0;
-    PORTD = 0;
-    PORTA = 0;
+    
 }
